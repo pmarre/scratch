@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css-1"
+    />
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css-2"
+    />
+
+    <link
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+      rel="stylesheet"
+      id="font-awesome-5-kit-css-3"
+    />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <!-- Load jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Scratch - The Recipe Site</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="nav-icon">
+          <i class="fas fa-hamburger"></i>
+          <span>MENU</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="savedRecipes.html" class="nav-link" id="saved-recipes-link"
+              >Saved Recipes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="submitRecipe.html" class="nav-link">Submit A Recipe</a>
+          </li>
+          <li class="close">
+            &times;
+          </li>
+        </ul>
+      </nav>
+      <div id="hero-background"></div>
+      <section class="hero-container">
+        <h2 class="hero-heading">Scratch</h2>
+        <h3 class="hero-subheading">
+          Search over 360,000 recipes to make from scratch
+        </h3>
+        <form method="GET" class="search-container">
+          <div class="input-container">
+            <input
+              type="text"
+              class="search-bar"
+              id="search-bar"
+              name="search-bar"
+              placeholder="Enter recipe here..."
+            />
+            <i class="fas fa-circle-notch spinner" id="spinner"></i>
+            <label for="search-bar" class="error-message"
+              >Please enter food!</label
+            >
+          </div>
+          <input
+            type="button"
+            class="btn btn-random-recipe"
+            value="Random Recipe"
+          />
+          <input
+            type="submit"
+            class="btn btn-search-recipe"
+            value="Search Recipes"
+            id="top-recipes"
+          />
+        </form>
+      </section>
+    </header>
+    <section class="top-recipes-container">
+      <div class="loading-container">
+        <i class="fas fa-circle-notch" id="spinner-content"></i>
+        <p class="loading">Loading your recipe...</p>
+      </div>
+      <h2 id="showing-results-heading">Your results</h2>
+      <div class="full-recipes"></div>
+      <div class="recipe-card-list"></div>
+      <div class="trending-recipes-container">
+        <h2 class="top-recipes-header">Trending Recipes</h2>
+
+        <div class="trending-recipe trending-recipe-container-lg">
+          <div class="trending-recipe-img recipe-1"></div>
+          <div class="trending-content">
+            <h3>
+              <a
+                href="#top-recipes-container"
+                class="trending-link trending-link-1"
+                >Recipe 1</a
+              >
+            </h3>
+            <div class="trending-summary-1"></div>
+          </div>
+        </div>
+
+        <div class="trending-recipe trending-recipe-container-sm">
+          <div class="recipe-2 trending-recipe-img"></div>
+          <div class="trending-content">
+            <h3>
+              <a
+                href="#top-recipes-container"
+                class="trending-link trending-link-2"
+                >Recipe 1</a
+              >
+            </h3>
+            <div class="trending-summary-2"></div>
+          </div>
+        </div>
+        <div class="trending-recipe trending-recipe-container-sm">
+          <div class="recipe-3 trending-recipe-img"></div>
+          <div class="trending-content">
+            <h3>
+              <a
+                href="#top-recipes-container"
+                class="trending-link trending-link-3"
+                >Recipe 1</a
+              >
+            </h3>
+            <div class="trending-summary-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="trivia-container">
+      <div class="fun-facts">
+        <h2 class="fun-facts-heading">Fun Food Facts</h2>
+        <p class="fact"></p>
+      </div>
+    </section>
+    <section class="about-container">
+      <div class="about-us">
+        <div class="access-information">
+          <i class="fas fa-utensils about-icon"></i>
+          <h2 class="about-heading">Access to over 350,000 recipes</h2>
+          <p class="about">
+            Dive into our delicious database of over 350,000 recipes all
+            submited by users like yourself! Whether you are craving tacos,
+            hamburgers, or a fresh salad, we can help you out. With our user
+            provided recipes you will never run out of meals to cook. Find your
+            next Super Bowl chili, Thanksgiving turkey, or morning biscuit
+            recipes here!
+          </p>
+          <a href="#" class="about-link"
+            >Search our recipes <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="other-information">
+          <i class="fas fa-users about-icon"></i>
+          <h2 class="about-heading">Who We Are</h2>
+          <p class="about">
+            We are a small team of adventurous foodies who are always looking
+            for something new to cook up! Initially, we started sharing recipes
+            by trading cook books and paper scraps. But, when those were lost or
+            covered in spilled milk, the idea for Scratch was born. Over the
+            past 5 years we have sourced hundreds of thousands of your favorite
+            recipes and added them to our database so you can access them
+            anytime. I hope you enjoy! Bon app&eacute;tit!
+          </p>
+          <a href="#" class="about-link learn-link"
+            >Learn more about us <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-container">
+          <h1 class="footer-logo">Scratch</h1>
+          <small>&copy; 2020 Scratch Inc.</small>
+        </div>
+        <div class="footer-menu-container">
+          <h4 class="footer-h4">Menu Items</h4>
+          <ul class="nav-list-footer">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="savedRecipes.html" class="nav-link">Saved Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a href="submitRecipe.html" class="nav-link">Submit A Recipe</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-social-container">
+          <h4 class="footer-h4">Stay Connected With Us</h4>
+          <a target="_blank" href="https://www.facebook.com"
+            ><i class="fab fa-facebook-f" aria-hidden="true"></i
+            ><span class="sr-only">Facebook</span></a
+          >
+          <a target="_blank" href="https://www.twitter.com"
+            ><i class="fab fa-twitter" aria-hidden="true"></i
+            ><span class="sr-only">Twitter</span></a
+          >
+          <a target="_blank" href="https://www.instagram.com"
+            ><i class="fab fa-instagram" aria-hidden="true"></i
+            ><span class="sr-only">Instagram</span></a
+          >
+          <a target="_blank" href="https://www.youtube.com"
+            ><i class="fab fa-youtube" aria-hidden="true"></i
+            ><span class="sr-only">Youtube</span></a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/cced6347e4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/recipes.js"></script>
+  </body>
+</html>
