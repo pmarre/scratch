@@ -2,6 +2,8 @@
 
 Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_cert/03_interactive_frontend_development/milestone_2/index.html)
 
+_Please note that this project was originally located in another repo and the majority of the history can still be found there. Here is the link: [Original Repo](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2)_
+
 ## TABLE OF CONTENTS
 
 1. [UX](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#UX)
