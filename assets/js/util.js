@@ -45,6 +45,7 @@ function buildThumbnail(response) {
 
 function showIngredients(foodId) {
   $('.recipe-card-list').css('display', 'none');
+  $(window).scrollTop(600);
   $('.loading-container ').show();
   $.ajax({
     url: `https://api.spoonacular.com/recipes/${foodId}/information`,
@@ -109,12 +110,13 @@ function showIngredients(foodId) {
 function buildRecipeCard(img, id, title) {
   return `
       <div class="recipe-card">
-        <div class="img" style="background-image: url('${img}')">
-          <div class="save-btn-container">
-            <i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${id}" style="display: block;" onclick="toggleLikeBtn(${id})"></i>
-            <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${id}" onclick="toggleLikeBtn(${id})"></i>
-          </div>
+        <div class="img" onclick="showIngredients(${id})" style="background-image: url('${img}')">
+         
         </div>
+        <div class="save-btn-container">
+        <i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${id}" style="display: block;" onclick="toggleLikeBtn(${id})"></i>
+        <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${id}" onclick="toggleLikeBtn(${id})"></i>
+      </div>
         <div class="recipe-details">
             <a class="recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${id})">${title}</a>
         </div>
@@ -286,6 +288,9 @@ function getTrendingRecipes() {
           .append(`<i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${recipe.id}" style="display: block;" onclick="toggleLikeBtn(${recipe.id})"></i>
           <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>`);
         link.click(() => {
+          showIngredients(recipe.id);
+        });
+        background.click(() => {
           showIngredients(recipe.id);
         });
       });

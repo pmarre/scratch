@@ -300,6 +300,10 @@ header {
   background-position: center;
 }
 
+.trending-recipe-img:hover {
+  cursor: pointer;
+}
+
 .trending-link {
   font-family: 'Montserrat';
   font-size: 1.25rem;
@@ -380,9 +384,10 @@ header {
   width: 100%;
   height: 60px;
   position: absolute;
-  bottom: 0;
+  top: 240px;
   left: 0;
   background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  z-index: 100;
 }
 
 .heart-btn {
@@ -395,24 +400,44 @@ header {
   background-color: #ececec;
   padding: 10px;
   border-radius: 5px;
+  width: 36px;
+  overflow: hidden;
   transition: all 0.2s ease-in-out;
 }
 
 .heart-btn:hover {
   cursor: pointer;
-  transform: translateY(-1px);
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+  width: 85px;
+}
+
+.heart-btn-outline:hover::after {
+  content: 'SAVE';
+  margin-left: 5px;
+  font-family: 'PT Serif', serif;
+  width: 80px;
+}
+
+.heart-btn-fill:hover::after {
+  content: 'SAVED';
+  margin-left: 5px;
+  font-family: 'PT Serif', serif;
+  width: 90px;
+  font-weight: 100;
 }
 
 .img {
   width: 100%;
   height: 300px;
   background-color: #a6ffcb;
-  background-image: url('./images/spinach-chicken-pomegranate-salad-5938.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+}
+
+.img:hover {
+  cursor: pointer;
 }
 
 .recipe-details {
@@ -427,20 +452,6 @@ header {
   flex-direction: column;
   justify-content: center;
 }
-
-/* .recipe-card-heading {
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  border-bottom: 2px solid #05d5ff;
-  padding-bottom: 4px;
-  margin-bottom: 10px;
-  letter-spacing: 0.025rem;
-}
-
-.recipe-card-cook-time {
-  color: gray;
-  margin-bottom: 10px;
-} */
 
 .recipe-card-description {
   margin-top: 10px;
