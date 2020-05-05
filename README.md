@@ -1,6 +1,6 @@
 # Scratch - Search over 350,000 recipes
 
-Scratch can be accessed here: [Live Site](https://pmarre.github.io/full_stack_cert/03_interactive_frontend_development/milestone_2/index.html)
+Scratch can be accessed here: [Live Site](https://pmarre.github.io/scratch/)
 
 _Please note that this project was originally located in another repo and the majority of the history can still be found there. Here is the link: [Original Repo](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2)_
 
