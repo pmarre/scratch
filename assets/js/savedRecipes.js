@@ -17,9 +17,8 @@ $(document).ready(() => {
             buildRecipeCard(response.image, response.id, response.title)
           );
           if (localStorage.getItem(response.id) !== null) {
-            $(`#heart-fill-${response.id}`).toggle();
-            $(`#heart-outline-${response.id}`).toggle();
-            $(`#heart-fill-${response.id}`).addClass('saved');
+            $(`.heart-fill-${response.id}`).toggle();
+            $(`.heart-outline-${response.id}`).toggle();
           }
 
           if ($('.recipe-inner-container').length > 1) {

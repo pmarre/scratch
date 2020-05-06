@@ -1,6 +1,6 @@
 // API is throttled at 100 requests/day
-// const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
-const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
+const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
+// const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/backup-img.png';
 
 // Build thumbnails
@@ -8,6 +8,7 @@ function buildThumbnail(response) {
   let recipes = response.results;
   let img;
   // let thumbnailElement;
+  $('#showing-results-heading').show();
   $('.recipe-card-list').prepend(`<div class="recipe-inner-container"></div>`);
   $('#spinner').hide();
 
@@ -31,10 +32,8 @@ function buildThumbnail(response) {
       buildRecipeCard(img, recipe.id, recipe.title)
     );
     if (localStorage.getItem(recipe.id) !== null) {
-      $(`#heart-fill-${recipe.id}`).toggle();
-      $(`#heart-outline-${recipe.id}`).toggle();
-      $(`#heart-fill-${recipe.id}`).addClass('saved');
-      localStorage.setItem(recipe.id, recipe.id);
+      $(`.heart-fill-${recipe.id}`).toggle();
+      $(`.heart-outline-${recipe.id}`).toggle();
     }
 
     if ($('.recipe-inner-container').length > 1) {
@@ -46,6 +45,7 @@ function buildThumbnail(response) {
 function showIngredients(foodId) {
   $('.recipe-card-list').css('display', 'none');
   $(window).scrollTop(600);
+  $('#showing-results-heading').hide();
   $('.loading-container ').show();
   $.ajax({
     url: `https://api.spoonacular.com/recipes/${foodId}/information`,
@@ -64,7 +64,6 @@ function showIngredients(foodId) {
         img = response.image;
       }
       $('.loading-container ').hide();
-
       // Is there a better way to do this? .full-recipes moved to bottom of div when recipe was added
       $('.top-recipes-container').prepend(
         $('.full-recipes').prepend(
@@ -78,6 +77,15 @@ function showIngredients(foodId) {
           )
         )
       );
+      console.log(foodId);
+      if (localStorage.getItem(foodId) !== null) {
+        $(`.heart-fill-${foodId}`).show();
+        $(`.heart-outline-${foodId}`).hide();
+      } else {
+        $(`.heart-fill-${foodId}`).hide();
+        $(`.heart-outline-${foodId}`).show();
+      }
+
       if ($('.full-recipe-container').length > 1) {
         $('.full-recipe-container').next().remove();
       }
@@ -114,8 +122,8 @@ function buildRecipeCard(img, id, title) {
          
         </div>
         <div class="save-btn-container">
-        <i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${id}" style="display: block;" onclick="toggleLikeBtn(${id})"></i>
-        <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${id}" onclick="toggleLikeBtn(${id})"></i>
+        <i class="far fa-heart heart-btn heart-btn-outline heart-outline-${id}" id="heart-outline-${id}" style="display: block;" onclick="toggleLikeBtn(${id})"></i>
+        <i class="fas fa-heart heart-btn heart-btn-fill heart-fill-${id}" style="display: none;" id="heart-fill-${id}" onclick="toggleLikeBtn(${id})"></i>
       </div>
         <div class="recipe-details">
             <a class="recipe-card-view-recipe" href="#top-recipes" onclick="showIngredients(${id})">${title}</a>
@@ -127,7 +135,11 @@ function buildRecipeCard(img, id, title) {
 function buildFullRecipeCard(id, img, title, servings, minutes, summary) {
   return `
     <div class="full-recipe-container">
-      <div id="${id}" class="banner-img" style="background-image: url('${img}')"></div>
+      <div id="${id}" class="banner-img" style="background-image: url('${img}')">
+      <div class="save-btn-container">
+        <i class="far fa-heart heart-btn heart-btn-outline heart-outline-${id}" onclick="toggleLikeBtn(${id})"></i>
+        <i class="fas fa-heart heart-btn heart-btn-fill heart-fill-${id}" onclick="toggleLikeBtn(${id})"></i>
+      </div></div>
       <div class="full-recipe-header">
         <button class="btn back-btn" onclick="backBtn()">Back</button>
         <div class="full-recipe-title">
@@ -161,18 +173,14 @@ function buildFullRecipeCard(id, img, title, servings, minutes, summary) {
 }
 
 function toggleLikeBtn(id) {
-  if ($(`#heart-fill-${id}`).hasClass('saved')) {
-    $(`#heart-outline-${id}`).toggle();
-    $(`#heart-fill-${id}`).toggle();
-    $(`#heart-fill-${id}`).removeClass('saved');
-
-    if (localStorage.getItem(id) !== null) {
-      localStorage.removeItem(id);
-    }
+  console.log(localStorage);
+  if (localStorage.getItem(id) !== null) {
+    $(`.heart-outline-${id}`).toggle();
+    $(`.heart-fill-${id}`).toggle();
+    localStorage.removeItem(id);
   } else {
-    $(`#heart-fill-${id}`).toggle();
-    $(`#heart-outline-${id}`).toggle();
-    $(`#heart-fill-${id}`).addClass('saved');
+    $(`.heart-fill-${id}`).toggle();
+    $(`.heart-outline-${id}`).toggle();
     localStorage.setItem(id, id);
   }
 }
@@ -285,8 +293,8 @@ function getTrendingRecipes() {
         link.attr('id', recipe.id);
         $(`.trending-summary-${i + 1}`).append(`<p class='sum'>${summary}</p>`);
         $(`.trending-summary-${i + 1}`)
-          .append(`<i class="far fa-heart heart-btn heart-btn-outline" id="heart-outline-${recipe.id}" style="display: block;" onclick="toggleLikeBtn(${recipe.id})"></i>
-          <i class="fas fa-heart heart-btn heart-btn-fill" style="display: none;" id="heart-fill-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>`);
+          .append(`<i class="far fa-heart heart-btn heart-btn-outline heart-outline-${recipe.id}" id="heart-outline-${recipe.id}" style="display: block;" onclick="toggleLikeBtn(${recipe.id})"></i>
+          <i class="fas fa-heart heart-btn heart-btn-fill heart-fill-${recipe.id}" style="display: none;" id="heart-fill-${recipe.id}" onclick="toggleLikeBtn(${recipe.id})"></i>`);
         link.click(() => {
           showIngredients(recipe.id);
         });
