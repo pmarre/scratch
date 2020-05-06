@@ -45,43 +45,43 @@ With the target audience being fairly broad, I needed a design that was intuitiv
 
 The next problem I had to solve before diving into the design of the project was what does my target audience need? They don't need a recipe database, they need a recipe. They need something that looks appealing for them to cook. Users don't come to the site to look at a recipe database, they come to the site with the intent to find the recipe they are longing for.
 
-So the next step was figuring out how to connect the user with a specific recipe. I chose to used a mixed content approach adding text and images so the user could read and see what the recipe was. But, rather than the user searching a recipe an only getting on back, I gave the user a number of results for them to quickly scan through and choose their favorite meal. 
+So the next step was figuring out how to connect the user with a specific recipe. I chose to used a mixed content approach adding text and images so the user could read and see what the recipe was. But, rather than the user searching a recipe an only getting on back, I gave the user a number of results for them to quickly scan through and choose their favorite meal.
 
 ### Structure
 
-For this project, I heavily valued minimalism. My goal was to deliver content in a clean way that allowed for the user to easily navigate through a large number of recipes. I chose to structure my site with a clear search bar at the top of the homepage and upon searching the user recieves recipe cards that list the name of the recipe, an image of the recipe, and a button to see the recipe details. This design is simple and doesn't interfer with the content that is being delivered. 
+For this project, I heavily valued minimalism. My goal was to deliver content in a clean way that allowed for the user to easily navigate through a large number of recipes. I chose to structure my site with a clear search bar at the top of the homepage and upon searching the user recieves recipe cards that list the name of the recipe, an image of the recipe, and a button to see the recipe details. This design is simple and doesn't interfer with the content that is being delivered.
 
 ### Wireframes
 
 <details>
 <summary>Desktop Homepage Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Desktop homepage wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/hp-desktop.png">
 </details>
 <details>
 <summary>Desktop Saved Recipes Page Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Desktop saved recipe wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/saved-desktop.png">
 </details>
 <details>
 <summary>Desktop Submit Recipe Page Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Desktop submit recipe wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/submit-desktop.png">
 </details>
 <details>
 <summary>Mobile Homepage Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Mobile homepage wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/hp-mobile.png">
 </details>
 <details>
 <summary>Mobile Saved Recipes Page Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Mobile saved recipe wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/saved-mobile.png">
 </details>
 <details>
 <summary>Mobile Submit Recipe Page Wireframe</summary>
 <br />
-   <img alt="Description" src="https://github.com/pmarre/full_stack_cert/blob/master/03_interactive_frontend_development/milestone_2/assets/images/readme-images/hp-wireframe.png">
+   <img alt="Mobile submit recipe wireframe" src="https://github.com/pmarre/scratch/blob/master/assets/images/readme-images/submit-mobile.png">
 </details>
 
 ## Features
@@ -109,11 +109,12 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 
 ## Future Features
 
-1. Login 
-   - In the future I want to add login so users can store the recipes in a database for long term 
-2. Commenting 
+1. Login
+   - In the future I want to add login so users can store the recipes in a database for long term
+2. Commenting
+
    - I would like to create more user engagement by allowing users to comment on recipes
-   
+
 ## Technologies Used
 
 - HTML5
@@ -172,7 +173,8 @@ A: Because I used the free version of the API, the site is limited to 100 reques
 ## Deployment
 
 #### Local Deployment
-To create a local copy of this repository, follow these steps: 
+
+To create a local copy of this repository, follow these steps:
 
 1. Go to my [repo](https://github.com/pmarre/scratch/)
 2. Click the "Clone or Download" button on the top right of the page
