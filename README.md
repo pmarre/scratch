@@ -6,19 +6,18 @@ _Please note that this project was originally located in another repo and the ma
 
 ## TABLE OF CONTENTS
 
-1. [UX](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2#UX)
-   - [User Stories](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#user-stories)
-   - [Strategy](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#strategy)
-   - [Scope](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#scope)
-   - [Structure](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#structure)
-   - [Surface](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#strategy)
-   - [Wireframes](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#wireframes)
-2. [Features](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#features)
-   - [More Key Features](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#more-key-features)
-3. [Technologies Used](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#technologies-used)
-4. [Testing](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#testing)
-5. [Edgecases](https://github.com/pmarre/full_stack_cert/tree/creating-read-me/03_interactive_frontend_development/milestone_2#edgecases)
-6. [Deployment]()
+1. [UX](https://github.com/pmarre/scratch/edit/master/README.md#UX)
+   - [User Stories](https://github.com/pmarre/scratch/edit/master/README.md#user-stories)
+   - [Strategy](https://github.com/pmarre/scratch/edit/master/README.md#strategy)
+   - [Scope](https://github.com/pmarre/scratch/edit/master/README.md#scope)
+   - [Structure](https://github.com/pmarre/scratch/edit/master/README.md#structure)
+   - [Wireframes](https://github.com/pmarre/scratch/edit/master/README.md#wireframes)
+2. [Features](https://github.com/pmarre/scratch/edit/master/README.md#features)
+   - [More Key Features](https://github.com/pmarre/scratch/edit/master/README.md#more-key-features)
+3. [Technologies Used](https://github.com/pmarre/scratch/edit/master/README.md#technologies-used)
+4. [Testing](https://github.com/pmarre/scratch/edit/master/README.md#testing)
+5. [Edgecases](https://github.com/pmarre/scratch/edit/master/README.md#edgecases)
+6. [Deployment](https://github.com/pmarre/scratch/edit/master/README.md#deployment)
 
 ## UX
 
