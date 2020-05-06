@@ -45,11 +45,11 @@ With the target audience being fairly broad, I needed a design that was intuitiv
 
 The next problem I had to solve before diving into the design of the project was what does my target audience need? They don't need a recipe database, they need a recipe. They need something that looks appealing for them to cook. Users don't come to the site to look at a recipe database, they come to the site with the intent to find the recipe they are longing for.
 
-So the next step was figuring out how to connect the user with the specific recipe they are looking for.
+So the next step was figuring out how to connect the user with a specific recipe. I chose to used a mixed content approach adding text and images so the user could read and see what the recipe was. But, rather than the user searching a recipe an only getting on back, I gave the user a number of results for them to quickly scan through and choose their favorite meal. 
 
 ### Structure
 
-### Surface
+For this project, I heavily valued minimalism. My goal was to deliver content in a clean way that allowed for the user to easily navigate through a large number of recipes. I chose to structure my site with a clear search bar at the top of the homepage and upon searching the user recieves recipe cards that list the name of the recipe, an image of the recipe, and a button to see the recipe details. This design is simple and doesn't interfer with the content that is being delivered. 
 
 ### Wireframes
 
@@ -109,6 +109,11 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 
 ## Future Features
 
+1. Login 
+   - In the future I want to add login so users can store the recipes in a database for long term 
+2. Commenting 
+   - I would like to create more user engagement by allowing users to comment on recipes
+   
 ## Technologies Used
 
 - HTML5
@@ -146,7 +151,7 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
    - Used the peer review Slack channel to have student/alumni/mentors review the site and give feedback and look for bugs
    - There were two errors/issues that were brought up in the peer review:
      1. Site was giving a 404 (page not found) error when API quota was reached - this was due to a syntax error in my redirect
-     2. While having no effect on the functionality of the site, by having my project share a repo with all of my course work, readability and repo navigation has become a bit of an issue. At this time, I am leaving the site in place, but moving forward each project will be in its own repository.
+     2. Readability and repo navigation had become a bit of an issue since I initially had my MS2 project sharing a repo with all my coursework and other projects. I ended up cloning the site and moving it, but most of my commit history still lay within the other repo which can be found [here](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2).
 
 ## Edgecases
 
@@ -165,3 +170,15 @@ _Q: Spoonacular's API has a pay wall. What happens if the daily limit is hit?_
 A: Because I used the free version of the API, the site is limited to 100 requests per day. If a user happens to do the 101st search of the day, the API responds with a 402 error and the user gets redirected to a new landing page telling them what the issue is, to return tomorrow, and if they are tired of the pay wall, to donate to the site.
 
 ## Deployment
+
+#### Local Deployment
+To create a local copy of this repository, follow these steps: 
+
+1. Go to my [repo](https://github.com/pmarre/scratch/)
+2. Click the "Clone or Download" button on the top right of the page
+3. Click the copy icon to copy the HTTPS link
+4. Open terminal
+5. Change the current directory to the location where the cloned directory will be made
+6. Type `git clone <cloned URL>` with the cloned URL being the URL you copied in step 3 and run the command
+
+For more information and screenshot images check out GitHub's guide to cloning a repo [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
