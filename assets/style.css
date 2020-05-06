@@ -144,7 +144,13 @@ header {
 }
 
 .close {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.025rem;
+  color: #000;
+  justify-self: center;
+  text-transform: uppercase;
+  margin: 10px;
 }
 
 .close:hover {
@@ -411,6 +417,14 @@ header {
   width: 85px;
 }
 
+.heart-btn-fill {
+  display: none;
+}
+
+.heart-btn-outline {
+  display: block;
+}
+
 .heart-btn-outline:hover::after {
   content: 'SAVE';
   margin-left: 5px;
@@ -508,6 +522,13 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.banner-img .save-btn-container {
+  bottom: 0;
+  left: 0;
+  top: initial;
 }
 
 .full-recipe-header {
@@ -1069,6 +1090,7 @@ footer {
 
   .nav-item a {
     margin: 0;
+    text-align: center;
   }
 
   .search-container {
