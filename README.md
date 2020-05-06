@@ -6,18 +6,18 @@ _Please note that this project was originally located in another repo and the ma
 
 ## TABLE OF CONTENTS
 
-1. [UX](https://github.com/pmarre/scratch/edit/master/README.md#UX)
-   - [User Stories](https://github.com/pmarre/scratch/edit/master/README.md#user-stories)
-   - [Strategy](https://github.com/pmarre/scratch/edit/master/README.md#strategy)
-   - [Scope](https://github.com/pmarre/scratch/edit/master/README.md#scope)
-   - [Structure](https://github.com/pmarre/scratch/edit/master/README.md#structure)
-   - [Wireframes](https://github.com/pmarre/scratch/edit/master/README.md#wireframes)
-2. [Features](https://github.com/pmarre/scratch/edit/master/README.md#features)
-   - [More Key Features](https://github.com/pmarre/scratch/edit/master/README.md#more-key-features)
-3. [Technologies Used](https://github.com/pmarre/scratch/edit/master/README.md#technologies-used)
-4. [Testing](https://github.com/pmarre/scratch/edit/master/README.md#testing)
-5. [Edgecases](https://github.com/pmarre/scratch/edit/master/README.md#edgecases)
-6. [Deployment](https://github.com/pmarre/scratch/edit/master/README.md#deployment)
+1. [UX](https://github.com/pmarre/scratch/blob/master/README.md#UX)
+   - [User Stories](https://github.com/pmarre/scratch/blob/master/README.md#user-stories)
+   - [Strategy](https://github.com/pmarre/scratch/blob/master/README.md#strategy)
+   - [Scope](https://github.com/pmarre/scratch/blob/master/README.md#scope)
+   - [Structure](https://github.com/pmarre/scratch/blob/master/README.md#structure)
+   - [Wireframes](https://github.com/pmarre/scratch/blob/master/README.md#wireframes)
+2. [Features](https://github.com/pmarre/scratch/blob/master/README.md#features)
+   - [More Key Features](https://github.com/pmarre/scratch/blob/master/README.md#more-key-features)
+3. [Technologies Used](https://github.com/pmarre/scratch/blob/master/README.md#technologies-used)
+4. [Testing](https://github.com/pmarre/scratch/blob/master/README.md#testing)
+5. [Edgecases](https://github.com/pmarre/scratch/blob/master/README.md#edgecases)
+6. [Deployment](https://github.com/pmarre/scratch/blob/master/README.md#deployment)
 
 ## UX
 
