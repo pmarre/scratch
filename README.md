@@ -14,6 +14,7 @@ _Please note that this project was originally located in another repo and the ma
    - [Wireframes](https://github.com/pmarre/scratch/blob/master/README.md#wireframes)
 2. [Features](https://github.com/pmarre/scratch/blob/master/README.md#features)
    - [More Key Features](https://github.com/pmarre/scratch/blob/master/README.md#more-key-features)
+   - [Future Features](https://github.com/pmarre/scratch/blob/master/README.md#future-features)
 3. [Technologies Used](https://github.com/pmarre/scratch/blob/master/README.md#technologies-used)
 4. [Testing](https://github.com/pmarre/scratch/blob/master/README.md#testing)
 5. [Edgecases](https://github.com/pmarre/scratch/blob/master/README.md#edgecases)
@@ -106,25 +107,26 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 6. Saved Recipes
    - Recipes the user has "liked" are stored with Local Storage and presented on the Saved Recipes page
 
-## Future Features
+#### Future Features
 
 1. Login
    - In the future I want to add login so users can store the recipes in a database for long term
 2. Commenting
-
    - I would like to create more user engagement by allowing users to comment on recipes
+3. Filter search/Advanced search
+   - Another feature I would like to add in the future is a way for users to filter their results based on various factors such as dietary restrictions, nutritional information, food category, etc.
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- Javascript
-- jQuery
-- Font Awesome
-- Google Fonts
-- Spoonacular Recipe API
-- Google Charts
-- Local Storage (for Saved Recipes)
+- HTML5 - used to semantically structure website
+- CSS3 - used for styling of HTML
+- Javascript - used in conjunction with jQuery to create an interactive user experience
+- jQuery - used in conjunction with Javascript to create an interactive user experience and make API requests
+- Font Awesome - Used for icons
+- Google Fonts - Used for website typography
+- Spoonacular Recipe API - used to get recipe data
+- Google Charts - used to create visualization of recipe nutrition information
+- Local Storage (for Saved Recipes) - used to store favorited recipes
 
 ## Testing
 
@@ -152,6 +154,19 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
    - There were two errors/issues that were brought up in the peer review:
      1. Site was giving a 404 (page not found) error when API quota was reached - this was due to a syntax error in my redirect
      2. Readability and repo navigation had become a bit of an issue since I initially had my MS2 project sharing a repo with all my coursework and other projects. I ended up cloning the site and moving it, but most of my commit history still lay within the other repo which can be found [here](https://github.com/pmarre/full_stack_cert/tree/master/03_interactive_frontend_development/milestone_2).
+4. Mentor review with Joel Douglas
+   - Worked with Joel at the beginning, middle, and end of project
+   - A few errors/issues he helped me with are:
+     1. Making code more readable by creating simpler functions
+     2. Adding a like button to the full recipe card
+     3. Using local storage to create a saved recipe page
+     4. Auto scroll functionality for trending recipes
+     5. Site readability (adjusting colors to make text more clear)
+
+#### Device/Browser Testing
+
+1. Used Chrome Dev tools to test the responsiveness of this project on multiple devices
+2. Check browser compatibility in Firefox, Chrome, and Safari
 
 ## Edgecases
 
@@ -176,10 +191,20 @@ A: Because I used the free version of the API, the site is limited to 100 reques
 To create a local copy of this repository, follow these steps:
 
 1. Go to my [repo](https://github.com/pmarre/scratch/)
-2. Click the "Clone or Download" button on the top right of the page
+2. Click the "Clone or Download" button on the top-right of the page
 3. Click the copy icon to copy the HTTPS link
 4. Open terminal
 5. Change the current directory to the location where the cloned directory will be made
 6. Type `git clone <cloned URL>` with the cloned URL being the URL you copied in step 3 and run the command
 
-For more information and screenshot images check out GitHub's guide to cloning a repo [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+For more information check out GitHub's guide to cloning a repo [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+
+#### Deploy to GitHub Pages
+
+1. Go to repository page
+2. Click on settings icon in the top-right of the page
+3. Scroll down to the "GitHub Pages" section
+4. Click on the "Source" dropdown menu and select a branch
+5. A success message with your live link should appear
+
+For more information check out GitHub's guide to GitHub Pages [here](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)

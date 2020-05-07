@@ -1,4 +1,4 @@
-// API is throttled at 100 requests/day
+// API is throttled at 100 requests/day, both API keys work, if one gets throttled switch the keys
 const RECIPE_API = '822ac61ec94b4490b4e562e53eccb278';
 // const RECIPE_API = 'fe4d98c4906948e2b62c8cde455bc054';
 const backupImage = './assets/images/backup-img.png';
@@ -12,8 +12,7 @@ function buildThumbnail(response) {
   $('.recipe-card-list').prepend(`<div class="recipe-inner-container"></div>`);
   $('#spinner').hide();
 
-  // Check if no images
-  // Set backup image if no image
+  // Check recipe for an image, if there is not one, add backup image as the default image
   recipes.map((recipe) => {
     // check if recipe obj has key 'imageUrls'
     if ('imageUrls' in recipe) {
@@ -42,6 +41,9 @@ function buildThumbnail(response) {
   });
 }
 
+/* Returns large card with all recipe details including, image, title, cook time,
+servings, ingredients, instructions, and nutrition information
+*/
 function showIngredients(foodId) {
   $('.recipe-card-list').css('display', 'none');
   $(window).scrollTop(600);
@@ -64,7 +66,6 @@ function showIngredients(foodId) {
         img = response.image;
       }
       $('.loading-container ').hide();
-      // Is there a better way to do this? .full-recipes moved to bottom of div when recipe was added
       $('.top-recipes-container').prepend(
         $('.full-recipes').prepend(
           buildFullRecipeCard(
@@ -77,7 +78,7 @@ function showIngredients(foodId) {
           )
         )
       );
-      console.log(foodId);
+
       if (localStorage.getItem(foodId) !== null) {
         $(`.heart-fill-${foodId}`).show();
         $(`.heart-outline-${foodId}`).hide();
@@ -89,13 +90,13 @@ function showIngredients(foodId) {
       if ($('.full-recipe-container').length > 1) {
         $('.full-recipe-container').next().remove();
       }
+
       getNutritionInfo(foodId);
       response.analyzedInstructions[0].steps.forEach((step) => {
         $('.instruction-list').append(`<li>${step.step}</li>`);
       });
 
       response.extendedIngredients.forEach((ingredient) => {
-        // hacked this together -- is there a better way to do this?
         item = Object.values(ingredient.originalString).join('');
         $('.ingredient-list').append(`<li>${item}</li>`);
       });
@@ -115,6 +116,7 @@ function showIngredients(foodId) {
 }
 
 // Build Recipe Thumbnail
+// Returns HTML card with image and title of each recipe
 function buildRecipeCard(img, id, title) {
   return `
       <div class="recipe-card">
@@ -132,6 +134,7 @@ function buildRecipeCard(img, id, title) {
 }
 
 // Build full view of recipe
+// Returns HTML element of the full recipe details to be used with showIngredients(foodId)
 function buildFullRecipeCard(id, img, title, servings, minutes, summary) {
   return `
     <div class="full-recipe-container">
@@ -172,8 +175,8 @@ function buildFullRecipeCard(id, img, title, servings, minutes, summary) {
     </div>`;
 }
 
+// Toggles like/save feature on all cards
 function toggleLikeBtn(id) {
-  console.log(localStorage);
   if (localStorage.getItem(id) !== null) {
     $(`.heart-outline-${id}`).toggle();
     $(`.heart-fill-${id}`).toggle();
@@ -185,12 +188,13 @@ function toggleLikeBtn(id) {
   }
 }
 
-// Back Button on full recipe
+// Back Button on full recipe, returns to list of recipes
 function backBtn() {
   $('.recipe-card-list').css('display', 'flex');
   $('.full-recipe-container').remove();
 }
 
+// Returns a random recipe when user clicks the random recipe buttton
 function getRandomRecipe() {
   $('.btn-random-recipe').click(() => {
     $.ajax({
@@ -221,6 +225,7 @@ function getRandomRecipe() {
   });
 }
 
+// Returns random fact when homepage is loaded
 function getRandomFact() {
   $.ajax({
     url: `https://api.spoonacular.com/food/trivia/random`,
@@ -245,6 +250,7 @@ function getRandomFact() {
   });
 }
 
+// Returns nutrition information for a specific recipe
 function getNutritionInfo(id) {
   $.ajax({
     url: `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json`,
@@ -272,6 +278,7 @@ function getNutritionInfo(id) {
   });
 }
 
+// Returns three trending recipes on loading of homepage
 function getTrendingRecipes() {
   $.ajax({
     url: `https://api.spoonacular.com/recipes/random?`,
@@ -284,7 +291,7 @@ function getTrendingRecipes() {
     success: (res) => {
       let recipes = res.recipes;
       recipes.map((recipe, i) => {
-        // Remove HTML elements from API summary
+        // Remove HTML elements from API recipe summary
         let summary = recipe.summary.replace(/<[^>]*>?/gm, '');
         let background = $(`.recipe-${i + 1}`);
         background.css('background-image', `url('${recipe.image}')`);
@@ -321,7 +328,7 @@ function throttledApiRedirect() {
   location.replace('throttled.html');
 }
 
-// Build Google chart with recipe nutrition information
+// Uses Google Charts to create a donut chart of the recipe nutrition information
 function createChart(fat, protein, carbs) {
   google.charts.load('current', { packages: ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
@@ -352,12 +359,16 @@ function createChart(fat, protein, carbs) {
   }
 }
 
+// Check that all inputs are filled out before submitting form
 function checkFormSubmission(e) {
   e.preventDefault();
   let errors = 0;
   for (var i = 0; i < $('.recipe-form-input').length; i++) {
     if ($($('.recipe-form-input')[i]).val() == '') {
+      $($('.recipe-form-input')[i]).css('background-color', '#eb7373');
       errors += 1;
+    } else {
+      $($('.recipe-form-input')[i]).css('background-color', '#f0f0f0');
     }
   }
   if (errors < 1) {

@@ -1,4 +1,8 @@
 'use strict';
+
+// On page load check local storage for key value pairs
+// If they exists, use .map() to loop through each key/value calling api with to get specific recipe details
+// Returns HTML card element with image and title
 $(document).ready(() => {
   $('.recipe-card-list').prepend(
     `<div class="recipe-inner-container" id="saved-container"></div>`

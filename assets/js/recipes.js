@@ -1,6 +1,12 @@
 'use strict';
 $(document).ready(() => {
   localStorage.removeItem('foodId');
+
+  // On load, open the menu if the window size is greater than 768px
+  if ($(window).width() > 768) {
+    $('.nav').addClass('nav-open');
+  }
+
   // Menu animations
   $('.nav-container').click(function () {
     $('.nav').addClass('nav-open');
@@ -9,6 +15,7 @@ $(document).ready(() => {
     $('.nav').removeClass('nav-open');
   });
 
+  // Submit search actions
   $('#clear-recipe').click(() => {
     $('.recipe-form-input').val('');
   });
@@ -17,12 +24,13 @@ $(document).ready(() => {
     checkFormSubmission(e);
   });
 
-  // get & display random fact & trending recipes on page load
+  // Get & display random fact & trending recipes on page load
   getRandomFact();
   getRandomRecipe();
   getTrendingRecipes();
 
   // On search, build recipe cards for first 15 results
+  // Returns HTML "card" for each item with an image and title
   $('.search-container').on('submit', (e) => {
     e.preventDefault();
     let searchTerm = $('.search-bar').val();
