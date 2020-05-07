@@ -127,6 +127,7 @@ Javascript and jQuery were used to add functionality to the project. Using jQuer
 - Spoonacular Recipe API - used to get recipe data
 - Google Charts - used to create visualization of recipe nutrition information
 - Local Storage (for Saved Recipes) - used to store favorited recipes
+- Undraw.co - Free, open source illustrations
 
 ## Testing
 
